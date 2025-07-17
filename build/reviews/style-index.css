@@ -1,0 +1,104 @@
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/reviews/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/reviews/style.scss (1) ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+body {
+  margin: 0;
+  font-family: "maven pro";
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+  position: relative;
+  padding: 40px 25px;
+}
+
+.section {
+  position: relative;
+}
+
+figure {
+  margin: 0;
+}
+
+:root {
+  --color-primary: #6B6B3B;
+  --color-secondary: #F6EE34;
+  --color-tertiary: #D8D4A3;
+  --text-header-style: #2c2c2c;
+  --text-paragraph-style: #ffffff;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+input, textarea, button {
+  box-sizing: border-box;
+}
+
+#section-reviews .container {
+  border-radius: 35px;
+  overflow: hidden;
+  border: 1px solid #889633;
+}
+
+#section-reviews .container .header {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 107px 80px 166px;
+}
+
+#section-reviews .container .header h2 {
+  font-size: 50px;
+}
+
+#section-reviews .container .body {
+  padding: 0 80px 102px;
+}
+
+#section-reviews .container .body .boxes {
+  margin-top: -119px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+#section-reviews .container .body .boxes section {
+  border-radius: 35px;
+  overflow: auto;
+  background: var(--color-tertiary);
+  max-width: 410px;
+  padding: 49px 35px;
+}
+
+#section-reviews .container .body .boxes section figure {
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#section-reviews .container .body .boxes section h4 {
+  margin: 17px 0 41px;
+  color: var(--color-primary);
+  font-size: 27px;
+}
+
+#section-reviews .container .body .boxes section p {
+  font-size: 22px;
+}
+
+@media (max-width: 1200px) {
+  #section-reviews .container .body {
+    padding: 0 25px 102px;
+  }
+  #section-reviews .container .header {
+    padding: 107px 25px 166px;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/
