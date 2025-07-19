@@ -104,8 +104,8 @@ export default function Edit(props) {
 				</div>
 			</footer>
 
-			<a href="https://your-wechat-link" class="wechat-float" target="_blank" aria-label="WeChat">
-				<i class="fab fa-weixin"></i>
+			<a href="https://wa.me/+971505513568" class="whatsapp-float" target="_blank" aria-label="Whatsapp">
+				<i class="fab fa-whatsapp"></i>
 			</a>
 
 		</div>
