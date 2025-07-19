@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -28,29 +28,30 @@ export default function save(props) {
 							<h2>What Our Clients Say</h2>
 						</div>
 						<div class="body">
-							<div class="boxes">
+							<InnerBlocks.Content />
+							{/* <div class="boxes">
 								<section>
 									<figure>
-										{/* <img src="images/profile.jpg" alt="profile picture placeholder"> */}
+										<img src="images/profile.jpg" alt="profile picture placeholder">
 									</figure>
 									<h4>Jesie Ola</h4>
 									<p>Absolutely loved my experience at the salon! The staff were friendly, the place was spotless, and my hai rcut turned out exactly how I wanted. Highly recommend!</p>
 								</section>
 								<section>
 									<figure>
-										{/* <img src="images/profile.jpg" alt="profile picture placeholder"> */}
+										<img src="images/profile.jpg" alt="profile picture placeholder">
 									</figure>
 									<h4>Jesie Ola</h4>
 									<p>Absolutely loved my experience at the salon! The staff were friendly, the place was spotless, and my hai rcut turned out exactly how I wanted. Highly recommend!</p>
 								</section>
 								<section>
 									<figure>
-										{/* <img src="images/profile.jpg" alt="profile picture placeholder"> */}
+										<img src="images/profile.jpg" alt="profile picture placeholder">
 									</figure>
 									<h4>Jesie Ola</h4>
 									<p>Absolutely loved my experience at the salon! The staff were friendly, the place was spotless, and my hai rcut turned out exactly how I wanted. Highly recommend!</p>
 								</section>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</div>

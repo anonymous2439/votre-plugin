@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, RichText, InspectorControls, MediaUpload, MediaUploadCheck  } from '@wordpress/block-editor';
+import { useBlockProps, RichText, InspectorControls, MediaUpload, MediaUploadCheck, InnerBlocks  } from '@wordpress/block-editor';
 import { PanelBody, SelectControl, Button } from '@wordpress/components';
 
 /**
@@ -72,29 +72,30 @@ export default function Edit(props) {
 							<h2>What Our Clients Say</h2>
 						</div>
 						<div class="body">
-							<div class="boxes">
+							<InnerBlocks />
+							{/* <div class="boxes">
 								<section>
 									<figure>
-										{/* <img src="images/profile.jpg" alt="profile picture placeholder"> */}
+										<img src="images/profile.jpg" alt="profile picture placeholder">
 									</figure>
 									<h4>Jesie Ola</h4>
 									<p>Absolutely loved my experience at the salon! The staff were friendly, the place was spotless, and my hai rcut turned out exactly how I wanted. Highly recommend!</p>
 								</section>
 								<section>
 									<figure>
-										{/* <img src="images/profile.jpg" alt="profile picture placeholder"> */}
+										<img src="images/profile.jpg" alt="profile picture placeholder">
 									</figure>
 									<h4>Jesie Ola</h4>
 									<p>Absolutely loved my experience at the salon! The staff were friendly, the place was spotless, and my hai rcut turned out exactly how I wanted. Highly recommend!</p>
 								</section>
 								<section>
 									<figure>
-										{/* <img src="images/profile.jpg" alt="profile picture placeholder"> */}
+										<img src="images/profile.jpg" alt="profile picture placeholder">
 									</figure>
 									<h4>Jesie Ola</h4>
 									<p>Absolutely loved my experience at the salon! The staff were friendly, the place was spotless, and my hai rcut turned out exactly how I wanted. Highly recommend!</p>
 								</section>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</div>

@@ -26,6 +26,8 @@
         #section-reviews .container .body .boxes section figure img {}
         #section-reviews .container .body .boxes section h4 {margin: 17px 0 41px; color: var(--color-primary); font-size: 27px;}
         #section-reviews .container .body .boxes section p {font-size: 22px;}
+        .ti-widget.ti-goog .ti-review-item > .ti-inner, .ti-widget.ti-goog .ti-load-more-reviews-container .ti-load-more-reviews-button {background: #D8D4A3 !important;border-radius: 24px !important;}
+        .ti-widget.ti-goog {position: relative;margin-top: -100px;}
         @media (max-width: 1200px) {
             #section-reviews .container .body {padding: 0 25px 102px;}
             #section-reviews .container .header {padding: 107px 25px 166px;}
