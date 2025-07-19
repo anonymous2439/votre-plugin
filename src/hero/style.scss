@@ -40,7 +40,7 @@
         #section-hero .info h1 .secondary {display: block; font-size: 50px;}
         #section-hero .info a {display: block; text-decoration: none;font-size: 30px; border-radius: 100px;border: 1px solid var(--color-secondary); color: var(--color-secondary);text-align: center;width: 371px; height: 96px; display: flex; justify-content: center; align-items: center;}
         #section-hero .hero-img {position: absolute;right: 0;top: 0;max-width: 788px;width: 55%;}
-        #section-hero .hero-img figure {position: relative;left: 50%;transform: translateX(-50%); display: block;border-radius: 0 0 55px 55px; overflow: hidden;}
+        #section-hero .hero-img figure {position: relative;left: 50%;transform: translateX(-50%); display: block;border-radius: 0 0 55px 55px; overflow: hidden; max-width: 769px;}
         #section-hero .hero-img figure img {display: block;}
         @media (max-width: 1200px) {}
         @media (max-width: 1024px) {
