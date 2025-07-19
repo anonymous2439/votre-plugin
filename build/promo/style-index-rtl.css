@@ -1,2 +1,70 @@
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/promo/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
-body{font-family:maven pro;margin:0}.wrapper{margin:auto;max-width:1440px;padding:40px 25px}.section,.wrapper{position:relative}figure{margin:0}:root{--color-primary:#6b6b3b;--color-secondary:#f6ee34;--color-tertiary:#d8d4a3;--text-header-style:#2c2c2c;--text-paragraph-style:#fff}h1,h2,h3,h4,p{margin:0}button,input,textarea{box-sizing:border-box}#section-promo .container{border-radius:45px;display:flex;overflow:hidden}#section-promo .container figure img{display:block;max-width:100%}@media(max-width:1024px){#section-promo{border-bottom:1px solid #c4c4c4}}@media(max-width:768px){#section-promo .container{border-radius:unset;flex-direction:column;gap:20px}#section-promo .container figure{border-radius:45px;overflow:hidden}}
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/promo/style.scss (1) ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+body {
+  margin: 0;
+  font-family: "maven pro";
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+  position: relative;
+  padding: 40px 25px;
+}
+
+.section {
+  position: relative;
+}
+
+figure {
+  margin: 0;
+}
+
+:root {
+  --color-primary: #6B6B3B;
+  --color-secondary: #F6EE34;
+  --color-tertiary: #D8D4A3;
+  --text-header-style: #2c2c2c;
+  --text-paragraph-style: #ffffff;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+input, textarea, button {
+  box-sizing: border-box;
+}
+
+#section-promo .container {
+  display: flex;
+  border-radius: 45px;
+  overflow: hidden;
+}
+
+#section-promo .container figure img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  #section-promo {
+    border-bottom: 1px solid #c4c4c4;
+  }
+}
+@media (max-width: 768px) {
+  #section-promo .container {
+    flex-direction: column;
+    gap: 20px;
+    border-radius: unset;
+  }
+  #section-promo .container figure {
+    border-radius: 45px;
+    overflow: hidden;
+  }
+}

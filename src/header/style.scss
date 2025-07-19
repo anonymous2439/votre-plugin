@@ -1,0 +1,46 @@
+        @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {margin: 0; font-family: 'maven pro';}
+        .wrapper {max-width: 1440px; margin: auto; position: relative;padding: 40px 25px;}
+        .section {position: relative;}
+        figure {margin: 0;}
+        :root {
+            --color-primary: #6B6B3B;
+            --color-secondary: #F6EE34;
+            --color-tertiary: #D8D4A3;
+            --text-header-style: #2c2c2c;
+            --text-paragraph-style: #ffffff;
+        }
+        h1,h2,h3,h4,p{margin: 0;}
+
+        input, textarea, button {box-sizing: border-box;}
+
+        /* hero section */
+        #section-header {background: var(--color-primary); color: #fff;margin-top: 0;}
+        #section-header .container{}
+        #section-header header {justify-content: space-between;align-items: center;display: flex;}
+        #section-header .main-logo{}
+        #section-header nav {}
+        #section-header nav ul {margin: 0;padding: 0;list-style: none;display: flex;justify-content: flex-end;z-index: 1;position: relative;gap: 10px 70px;}
+        #section-header nav ul li {}
+        #section-header nav ul li a {color: #000;text-decoration: none;cursor: pointer;}
+        #section-header nav ul li a:hover,#section-header nav ul li.active a, #section-header nav ul li.current-menu-item a {color: #fff;}
+
+        .wp-block-navigation__responsive-container {
+            &.is-menu-open {
+                background-color: var(--color-tertiary) !important;
+                box-shadow: 10px 10px 10px 10px #1a1a1a !important;
+            }
+        }
+
+        @media (max-width: 1200px) {}
+        @media (max-width: 1024px) {
+            #section-header header {margin-bottom: 25px;}
+        } 
+        @media (max-width: 768px) {
+            
+        } 
+        @media (max-width: 599px) {
+            
+        }  
+        @media (max-width: 480px) {}   /* Phones */
