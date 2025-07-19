@@ -107,7 +107,7 @@ export default function Edit(props) {
                                         <p>Facial Treatments</p>
                                     </figcaption>
                                 </figure>
-                                <a href="#!"></a>
+                                <a href="/votre/?page_id=212"></a>
                             </section>
                             <section>
                                 <figure>
@@ -118,7 +118,7 @@ export default function Edit(props) {
                                         <p>Nail Treatments</p>
                                     </figcaption>
                                 </figure>
-                                <a href="#!"></a>
+                                <a href="/votre/?page_id=219"></a>
                             </section>
                             <section>
                                 <figure>
@@ -129,7 +129,7 @@ export default function Edit(props) {
                                         <p>Massage Therapies</p>
                                     </figcaption>
                                 </figure>
-                                <a href="#!"></a>
+                                <a href="/votre/?page_id=216"></a>
                             </section>
                             <section>
                                 <figure>
@@ -140,7 +140,7 @@ export default function Edit(props) {
                                         <p>More</p>
                                     </figcaption>
                                 </figure>
-                                <a href="#!"></a>
+                                <a href="/votre/?page_id=234"></a>
                             </section>
                         </div>
 					</div>
