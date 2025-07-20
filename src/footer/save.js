@@ -21,7 +21,7 @@ export default function save(props) {
 	return (
 		<p { ...useBlockProps.save() }>
 			
-			<footer>
+			<footer id='section-footer'>
 				<div class="wrapper">
 					<div class="container">
 						<div class="footer-upper">
