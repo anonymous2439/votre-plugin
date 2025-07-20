@@ -25,6 +25,15 @@
         #section-services .boxes section figcaption {background: var(--color-primary); padding: 16px 10px;}
         #section-services .boxes section figcaption p{font-size: 33px; color: #fff; text-align: center;}
         #section-services .boxes section a {position: absolute;width: 100%; height: 100%; left: 0; top: 0; display: block;}
+        @media (max-width: 1365px) {
+            #section-services .boxes section figcaption {
+                padding: 0px 10px;
+                min-height: 125px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
         @media (max-width: 1200px) {
             #section-services .boxes section p {font-size: 28px;}
         }

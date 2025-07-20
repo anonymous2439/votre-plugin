@@ -106,3 +106,8 @@ input, textarea, button {
     transform: translateX(50%);
   }
 }
+@media (max-width: 599px) {
+  #section-about .container section p {
+    padding: 38px 25px;
+  }
+}

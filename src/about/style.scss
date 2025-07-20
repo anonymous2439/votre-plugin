@@ -33,3 +33,7 @@
             #section-about .container section:nth-of-type(2) {max-width: 716px;margin: 0 auto;}
             #section-about .container section:nth-of-type(2) img {position:relative;left: 50%;transform: translateX(-50%);}
         }
+
+        @media (max-width: 599px) {
+            #section-about .container section p {padding: 38px 25px;}
+        }

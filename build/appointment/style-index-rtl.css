@@ -187,9 +187,6 @@ input, textarea, button {
   #section-appointment .container figure figcaption h4 {
     font-size: 45px;
   }
-  #section-appointment .container figure figcaption .bg-bullet {
-    display: none;
-  }
 }
 @media (max-width: 1024px) {
   #section-appointment .container {
@@ -225,6 +222,9 @@ input, textarea, button {
   }
   #section-appointment .container form {
     width: 100%;
+  }
+  #section-appointment .container figure figcaption .bg-bullet {
+    display: none;
   }
 }
 @media (max-width: 768px) {

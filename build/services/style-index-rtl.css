@@ -92,6 +92,15 @@ input, textarea, button {
   display: block;
 }
 
+@media (max-width: 1365px) {
+  #section-services .boxes section figcaption {
+    padding: 0px 10px;
+    min-height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 @media (max-width: 1200px) {
   #section-services .boxes section p {
     font-size: 28px;

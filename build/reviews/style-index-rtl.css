@@ -101,12 +101,3 @@ input, textarea, button {
   position: relative;
   margin-top: -100px;
 }
-
-@media (max-width: 1200px) {
-  #section-reviews .container .body {
-    padding: 0 25px 102px;
-  }
-  #section-reviews .container .header {
-    padding: 107px 25px 166px;
-  }
-}
