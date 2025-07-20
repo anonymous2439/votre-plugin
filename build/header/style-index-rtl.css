@@ -66,13 +66,17 @@ input, textarea, button {
 }
 
 #section-header nav ul li a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
 
 #section-header nav ul li a:hover, #section-header nav ul li.active a, #section-header nav ul li.current-menu-item a {
-  color: #fff;
+  text-decoration: underline;
+}
+
+#section-header nav ul ul li a {
+  color: #1a1a1a;
 }
 
 .wp-block-navigation__responsive-container.is-menu-open {

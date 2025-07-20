@@ -23,8 +23,9 @@
         #section-header nav {}
         #section-header nav ul {margin: 0;padding: 0;list-style: none;display: flex;justify-content: flex-end;z-index: 1;position: relative;gap: 10px 70px;}
         #section-header nav ul li {}
-        #section-header nav ul li a {color: #000;text-decoration: none;cursor: pointer;}
-        #section-header nav ul li a:hover,#section-header nav ul li.active a, #section-header nav ul li.current-menu-item a {color: #fff;}
+        #section-header nav ul li a {color: #fff;text-decoration: none;cursor: pointer;}
+        #section-header nav ul li a:hover,#section-header nav ul li.active a, #section-header nav ul li.current-menu-item a {text-decoration: underline;}
+        #section-header nav ul ul li a {color: #1a1a1a;}
 
         .wp-block-navigation__responsive-container {
             &.is-menu-open {

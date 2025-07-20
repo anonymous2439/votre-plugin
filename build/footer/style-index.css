@@ -134,7 +134,7 @@ footer .container .footer-lower .footer-nav ul > li a {
   text-decoration: unset;
 }
 
-footer .container .footer-lower .footer-nav ul li.active a, footer .container .footer-lower .footer-nav ul li:hover a {
+footer .container .footer-lower .footer-nav ul li.active a, footer .container .footer-lower .footer-nav ul li a:hover {
   text-decoration: underline;
 }
 
@@ -145,6 +145,10 @@ footer .container .footer-lower .copyright {
 footer .container .footer-lower .copyright p {
   color: #fff;
   font-size: 14px;
+}
+
+#section-footer .wp-block-navigation .wp-block-navigation__submenu-icon {
+  color: #fff;
 }
 
 .whatsapp-float {
