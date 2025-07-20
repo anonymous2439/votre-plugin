@@ -40,18 +40,18 @@ export default function save(props) {
 							</figcaption>
 						</figure>
 
-						<form action="">
-							<input placeholder="First Name" />
-							<input placeholder="Last Name" />
+						<form action="" method="post">
+							<input placeholder="First Name" name='first_name' required />
+							<input placeholder="Last Name" name='last_name' />
 
-							<input placeholder="Phone Number" />
-							<input placeholder="Email" />
+							<input placeholder="Phone Number" name='phone_number' required />
+							<input placeholder="Email" type='email' name='email' required />
 
-							<input class="datetime" placeholder="Date & Time" />
+							<input class="datetime" placeholder="Date & Time" type='datetime-local' name='datetime' required />
 
-							<textarea placeholder="Write a short note"></textarea>
+							<textarea placeholder="Write a short note" name='message'></textarea>
 
-							<button type="submit">
+							<button type="submit" name='appointment_form_submit'>
 								BOOK APPOINTMENT
 							</button>
 						</form>

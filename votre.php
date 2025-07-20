@@ -57,3 +57,21 @@ function create_block_votre_block_init() {
 	}
 }
 add_action( 'init', 'create_block_votre_block_init' );
+
+add_action('init', 'appointment_form_submit');
+function appointment_form_submit() {
+    if (isset($_POST['appointment_form_submit'])) {
+        $name 			= sanitize_text_field($_POST['last_name'] .', '. $_POST['first_name']);
+        $email 			= sanitize_email($_POST['email']);
+        $message 		= sanitize_textarea_field($_POST['message']);
+        $phone_number 	= sanitize_textarea_field($_POST['phone_number']);
+        $datetime 		= sanitize_textarea_field($_POST['datetime']);
+
+        $to = 'votremailserver@gmail.com';
+        $subject = 'Book an Appointment';
+        $body = "Name: $name\nPhone Number: $phone_number\nEmail: $email\Date and Time: $datetime\n\n$message";
+        $headers = ['From: ' . $name . ' <' . $email . '>'];
+
+        wp_mail($to, $subject, $body, $headers);
+    }
+}
