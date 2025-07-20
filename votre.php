@@ -64,12 +64,12 @@ function appointment_form_submit() {
         $name 			= sanitize_text_field($_POST['last_name'] .', '. $_POST['first_name']);
         $email 			= sanitize_email($_POST['email']);
         $message 		= sanitize_textarea_field($_POST['message']);
-        $phone_number 	= sanitize_textarea_field($_POST['phone_number']);
-        $datetime 		= sanitize_textarea_field($_POST['datetime']);
+        $phone_number 	= sanitize_text_field($_POST['phone_number']);
+        $datetime 		= (new DateTime(sanitize_text_field($_POST['datetime'])))->format('F j, Y \a\t g:i A');
 
         $to = 'votremailserver@gmail.com';
         $subject = 'Book an Appointment';
-        $body = "Name: $name\nPhone Number: $phone_number\nEmail: $email\Date and Time: $datetime\n\n$message";
+        $body = "Name: $name\nPhone Number: $phone_number\nEmail: $email\nDate and Time: $datetime\n\n$message";
         $headers = ['From: ' . $name . ' <' . $email . '>'];
 
         wp_mail($to, $subject, $body, $headers);
