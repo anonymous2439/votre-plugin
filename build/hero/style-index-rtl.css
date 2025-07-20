@@ -141,6 +141,10 @@ input, textarea, button {
   display: block;
 }
 
+#section-hero .wp-block-navigation .wp-block-navigation__submenu-icon {
+  color: #000;
+}
+
 @media (max-width: 1024px) {
   #section-hero header {
     margin-bottom: 25px;

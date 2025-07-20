@@ -42,6 +42,9 @@
         #section-hero .hero-img {position: absolute;right: 0;top: 0;max-width: 788px;width: 55%;}
         #section-hero .hero-img figure {position: relative;left: 50%;transform: translateX(-50%); display: block;border-radius: 0 0 55px 55px; overflow: hidden; max-width: 769px;}
         #section-hero .hero-img figure img {display: block;}
+        #section-hero .wp-block-navigation .wp-block-navigation__submenu-icon {
+            color: #000;
+        }
         @media (max-width: 1200px) {}
         @media (max-width: 1024px) {
             #section-hero header {margin-bottom: 25px;}
