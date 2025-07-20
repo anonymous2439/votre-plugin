@@ -143,12 +143,14 @@ input, textarea, button {
 
 #section-appointment .container form input.datetime {
   width: 100%;
+  font-family: "maven pro";
 }
 
 #section-appointment .container form textarea {
   width: 100%;
   height: 120px;
   resize: none;
+  font-family: "maven pro";
 }
 
 #section-appointment .container form button {
