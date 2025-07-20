@@ -48,6 +48,10 @@ input, textarea, button {
   margin-top: 0;
 }
 
+#section-header .wrapper {
+  padding: 15px 25px;
+}
+
 #section-header header {
   justify-content: space-between;
   align-items: center;
