@@ -62,4 +62,14 @@ input, textarea, button {
   max-width: 100%;
 }
 
+@media (max-width: 768px) {
+  #section-showcase .container {
+    border-radius: 10px;
+    flex-direction: column;
+  }
+  #section-showcase .container figure img {
+    border-radius: 10px;
+  }
+}
+
 /*# sourceMappingURL=style-index.css.map*/

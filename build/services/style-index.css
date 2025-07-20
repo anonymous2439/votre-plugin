@@ -78,7 +78,7 @@ input, textarea, button {
 }
 
 #section-services .boxes section figcaption p {
-  font-size: 33px;
+  font-size: 25px;
   color: #fff;
   text-align: center;
 }
@@ -92,10 +92,10 @@ input, textarea, button {
   display: block;
 }
 
-@media (max-width: 1365px) {
+@media (max-width: 1110px) {
   #section-services .boxes section figcaption {
     padding: 0px 10px;
-    min-height: 125px;
+    min-height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,11 +117,6 @@ input, textarea, button {
   #section-services .info h2 {
     margin-left: 0;
     text-align: center;
-  }
-}
-@media (max-width: 480px) {
-  #section-services .boxes section {
-    width: 100%;
   }
 }
 

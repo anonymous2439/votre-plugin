@@ -61,3 +61,13 @@ input, textarea, button {
 #section-showcase .container figure img {
   max-width: 100%;
 }
+
+@media (max-width: 768px) {
+  #section-showcase .container {
+    border-radius: 10px;
+    flex-direction: column;
+  }
+  #section-showcase .container figure img {
+    border-radius: 10px;
+  }
+}

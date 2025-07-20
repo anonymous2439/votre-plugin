@@ -21,3 +21,13 @@
         #section-showcase .container figure:nth-of-type(1) img {border-radius: 60px 0 0 60px;}
         #section-showcase .container figure:nth-of-type(2) img {border-radius: 0 60px 60px 0;}
         #section-showcase .container figure img {max-width: 100%;}
+
+        @media (max-width: 768px) {
+            #section-showcase .container {
+                border-radius: 10px;
+                flex-direction: column;
+            }
+            #section-showcase .container figure img {
+                border-radius: 10px;
+            }
+        }

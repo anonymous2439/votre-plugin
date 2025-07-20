@@ -102,4 +102,18 @@ input, textarea, button {
   margin-top: -100px;
 }
 
+@media (max-width: 768px) {
+  #section-reviews .container .header {
+    padding: 81px 25px 111px;
+  }
+  #section-reviews .container .body {
+    padding: 0 25px 52px;
+  }
+}
+@media (max-width: 599px) {
+  #section-reviews .container .header {
+    padding: 81px 25px 111px;
+  }
+}
+
 /*# sourceMappingURL=style-index.css.map*/

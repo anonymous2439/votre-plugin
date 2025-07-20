@@ -110,4 +110,7 @@ input, textarea, button {
   #section-about .container section p {
     padding: 38px 25px;
   }
+  #section-about .container section h2 {
+    padding: 50px 25px;
+  }
 }

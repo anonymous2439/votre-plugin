@@ -54,14 +54,6 @@
             #section-appointment .container form {width: 100%;}
             #section-appointment .container figure figcaption .bg-bullet {display: none;}
         }
-        @media (max-width: 768px) {
-            footer .container .footer-upper .content {padding: 22px 25px;width: 100% !important;text-align: center;}
-            footer .container .footer-upper {flex-wrap: wrap;}
-            footer .container .footer-upper .map {width: 100% !important;height: 300px;}
-            footer .container .footer-lower .footer-nav ul {justify-content: center; flex-wrap: wrap;}
-            footer .container .footer-lower .copyright {text-align: center;}
-            footer .container .footer-lower {padding: 40px 25px;}
-        }
         @media (max-width: 480px) {
             #section-appointment .container form input {width: 100%;}
         }
