@@ -27,7 +27,7 @@ export default function save(props) {
 						<section>
 							<h2>{header}</h2>
 							<p>
-								<RichText.Content tagName="span" value={attributes.info} />
+								<RichText.Content tagName="span" value={info} />
 								<a href="/votre/?page_id=198">Read more</a>
 							</p>
 						</section>
