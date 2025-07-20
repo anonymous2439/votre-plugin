@@ -199,4 +199,10 @@ input, textarea, button {
     max-width: 100%;
   }
 }
+@media (max-width: 599px) {
+  #section-hero nav ul ul, #section-header nav ul ul {
+    position: static;
+    padding-right: 20px;
+  }
+}
 /* Phones */

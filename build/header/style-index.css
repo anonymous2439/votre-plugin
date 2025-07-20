@@ -84,9 +84,19 @@ input, textarea, button {
   box-shadow: 10px 10px 10px 10px #1a1a1a !important;
 }
 
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item__content {
+  color: #1a1a1a !important;
+}
+
 @media (max-width: 1024px) {
   #section-header header {
     margin-bottom: 25px;
+  }
+}
+@media (max-width: 599px) {
+  #section-hero nav ul ul, #section-header nav ul ul {
+    position: static;
+    padding-left: 20px;
   }
 }
 /* Phones */

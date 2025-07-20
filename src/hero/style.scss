@@ -64,6 +64,9 @@
             #section-hero .hero-img figure img {max-width: 100%;}
         } 
         @media (max-width: 599px) {
-            
+            #section-hero nav ul ul, #section-header nav ul ul {
+                position: static;
+                padding-left: 20px;
+            }
         }  
         @media (max-width: 480px) {}   /* Phones */
