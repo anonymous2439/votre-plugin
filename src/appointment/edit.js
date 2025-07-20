@@ -91,7 +91,7 @@ export default function Edit(props) {
 							<input placeholder="Phone Number" />
 							<input placeholder="Email" />
 
-							<input class="datetime" placeholder="Date & Time" />
+							<input class="datetime" type='datetime-local' name='datetime' required />
 
 							<textarea placeholder="Write a short note"></textarea>
 

@@ -97,7 +97,7 @@ export default function Edit(props) {
 								/>
 							</div>
 							<div class="copyright">
-								<p>© 2025 Votre Slimming Therapy Center | Designed by Sherwin | Privacy Policy</p>
+								<p>© 2025 Votre Slimming Therapy Cente</p>
 							</div>
 						</div>
 					</div>

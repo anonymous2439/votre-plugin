@@ -144,7 +144,9 @@ function Edit(props) {
               placeholder: "Email"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
               class: "datetime",
-              placeholder: "Date & Time"
+              type: "datetime-local",
+              name: "datetime",
+              required: true
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textarea", {
               placeholder: "Write a short note"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
@@ -342,7 +344,6 @@ function save(props) {
               required: true
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
               class: "datetime",
-              placeholder: "Date & Time",
               type: "datetime-local",
               name: "datetime",
               required: true

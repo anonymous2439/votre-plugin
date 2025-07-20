@@ -68,7 +68,7 @@ export default function save(props) {
 								<InnerBlocks.Content templateId="navigation" />
 							</div>
 							<div class="copyright">
-								<p>© 2025 Votre Slimming Therapy Center | Designed by Sherwin | Privacy Policy</p>
+								<p>© 2025 Votre Slimming Therapy Center</p>
 							</div>
 						</div>
 					</div>

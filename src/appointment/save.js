@@ -47,7 +47,7 @@ export default function save(props) {
 							<input placeholder="Phone Number" name='phone_number' required />
 							<input placeholder="Email" type='email' name='email' required />
 
-							<input class="datetime" placeholder="Date & Time" type='datetime-local' name='datetime' required />
+							<input class="datetime" type='datetime-local' name='datetime' required />
 
 							<textarea placeholder="Write a short note" name='message'></textarea>
 

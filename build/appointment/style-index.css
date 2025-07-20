@@ -141,7 +141,7 @@ input, textarea, button {
   border-radius: 10px;
 }
 
-#section-appointment .container form input.datetime {
+#section-appointment .container form .datetime {
   width: 100%;
   font-family: "maven pro";
 }

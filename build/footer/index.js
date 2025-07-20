@@ -171,7 +171,7 @@ function Edit(props) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               class: "copyright",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                children: "\xA9 2025 Votre Slimming Therapy Center | Designed by Sherwin | Privacy Policy"
+                children: "\xA9 2025 Votre Slimming Therapy Cente"
               })
             })]
           })]
@@ -408,7 +408,7 @@ function save(props) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
               class: "copyright",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                children: "\xA9 2025 Votre Slimming Therapy Center | Designed by Sherwin | Privacy Policy"
+                children: "\xA9 2025 Votre Slimming Therapy Center"
               })
             })]
           })]
