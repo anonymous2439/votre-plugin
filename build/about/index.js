@@ -293,7 +293,7 @@ function save(props) {
               children: header
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
               children: [info, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "#!",
+                href: "/votre/?page_id=198",
                 children: "Read more"
               })]
             })]

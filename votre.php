@@ -58,20 +58,48 @@ function create_block_votre_block_init() {
 }
 add_action( 'init', 'create_block_votre_block_init' );
 
-add_action('init', 'appointment_form_submit');
+add_action('wp_enqueue_scripts', 'enqueue_sweetalert');
+function enqueue_sweetalert() {
+	wp_enqueue_script(
+		'sweetalert',
+		'https://unpkg.com/sweetalert/dist/sweetalert.min.js',
+		[],
+		null,
+		true // Load in footer
+	);
+}
+
+add_action('template_redirect', 'appointment_form_submit');
 function appointment_form_submit() {
-    if (isset($_POST['appointment_form_submit'])) {
-        $name 			= sanitize_text_field($_POST['last_name'] .', '. $_POST['first_name']);
-        $email 			= sanitize_email($_POST['email']);
-        $message 		= sanitize_textarea_field($_POST['message']);
-        $phone_number 	= sanitize_text_field($_POST['phone_number']);
-        $datetime 		= (new DateTime(sanitize_text_field($_POST['datetime'])))->format('F j, Y \a\t g:i A');
+	if (isset($_POST['appointment_form_submit'])) {
+		$name 			= sanitize_text_field($_POST['last_name'] .', '. $_POST['first_name']);
+		$email 			= sanitize_email($_POST['email']);
+		$message 		= sanitize_textarea_field($_POST['message']);
+		$phone_number 	= sanitize_text_field($_POST['phone_number']);
+		$datetime 		= (new DateTime(sanitize_text_field($_POST['datetime'])))->format('F j, Y \a\t g:i A');
 
-        $to = 'votremailserver@gmail.com';
-        $subject = 'Book an Appointment';
-        $body = "Name: $name\nPhone Number: $phone_number\nEmail: $email\nDate and Time: $datetime\n\n$message";
-        $headers = ['From: ' . $name . ' <' . $email . '>'];
+		$to = 'votremailserver@gmail.com';
+		$subject = 'Book an Appointment';
+		$body = "Name: $name\nPhone Number: $phone_number\nEmail: $email\nDate and Time: $datetime\n\n$message";
+		$headers = ['From: ' . $name . ' <' . $email . '>'];
 
-        wp_mail($to, $subject, $body, $headers);
-    }
+		wp_mail($to, $subject, $body, $headers);
+
+		// Set a query param or cookie to trigger JS later
+		wp_redirect(add_query_arg('appointment_success', '1', wp_get_referer()));
+		exit;
+	}
+}
+
+add_action('wp_footer', 'inline_swal');
+function inline_swal() {
+	if (isset($_GET['appointment_success']) && $_GET['appointment_success'] === '1') {
+		?>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				swal("Success!", "Appointment booked successfully!", "success");
+			});
+		</script>
+		<?php
+	}
 }

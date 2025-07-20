@@ -50,7 +50,7 @@ input, textarea, button {
 #section-reviews .container .header {
   background: var(--color-primary);
   color: var(--color-secondary);
-  padding: 107px 80px 166px;
+  padding: 81px 80px 111px;
 }
 
 #section-reviews .container .header h2 {
@@ -58,7 +58,7 @@ input, textarea, button {
 }
 
 #section-reviews .container .body {
-  padding: 0 80px 102px;
+  padding: 0 80px 52px;
 }
 
 #section-reviews .container .body .boxes {

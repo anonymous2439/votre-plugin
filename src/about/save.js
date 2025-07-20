@@ -28,7 +28,7 @@ export default function save(props) {
 							<h2>{header}</h2>
 							<p>
 								{info}
-								<a href="#!">Read more</a>
+								<a href="/votre/?page_id=198">Read more</a>
 							</p>
 						</section>
 						<section>
