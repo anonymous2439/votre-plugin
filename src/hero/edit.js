@@ -113,7 +113,7 @@ export default function Edit(props) {
 				</PanelBody>
 			</InspectorControls>
 
-			<InspectorControls>
+			{/* <InspectorControls>
 				<PanelBody title="Page Selector" initialOpen={true}>
 				<SelectControl
 					label="Link to Page"
@@ -122,7 +122,7 @@ export default function Edit(props) {
 					onChange={onChangePage}
 				/>
 				</PanelBody>
-			</InspectorControls>
+			</InspectorControls> */}
 
 
 			<div id="section-hero" class="section">

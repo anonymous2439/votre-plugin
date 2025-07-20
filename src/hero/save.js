@@ -49,7 +49,7 @@ export default function save(props) {
 								<span class="primary">{title}</span>
 								<span class="secondary">{subtitle}</span>
 							</h1>
-							<a href={selectedPageUrl}>{btnText}</a>
+							<a href='#section-appointment'>{btnText}</a>
 						</div>
 						
 					</div>
