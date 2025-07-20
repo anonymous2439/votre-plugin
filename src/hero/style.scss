@@ -24,7 +24,7 @@
         #section-hero nav ul {margin: 0;padding: 0;list-style: none;display: flex;justify-content: flex-end;z-index: 1;position: relative;gap: 10px 70px;}
         #section-hero nav ul li {}
         #section-hero nav ul li a {color: #000;text-decoration: none;cursor: pointer;}
-        #section-hero nav ul li a:hover,#section-hero nav ul li.active a, #section-hero nav ul li.current-menu-item a {color: #fff;}
+        #section-hero nav ul li a:hover,#section-hero nav ul li.active a, #section-hero nav ul li.current-menu-item a {text-decoration: underline;}
 
         .wp-block-navigation__responsive-container {
             &.is-menu-open {

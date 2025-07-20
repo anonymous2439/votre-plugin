@@ -23,6 +23,7 @@
 		"@wordpress/components": "^29.12.0",
 		"@wordpress/data": "^10.26.0",
 		"@wordpress/media-utils": "^5.26.0",
+		"animate.css": "^4.1.1",
 		"sweetalert": "^2.1.2"
 	}
 }

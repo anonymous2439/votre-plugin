@@ -75,7 +75,7 @@ input, textarea, button {
 }
 
 #section-hero nav ul li a:hover, #section-hero nav ul li.active a, #section-hero nav ul li.current-menu-item a {
-  color: #fff;
+  text-decoration: underline;
 }
 
 .wp-block-navigation__responsive-container.is-menu-open {
