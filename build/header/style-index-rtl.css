@@ -95,7 +95,7 @@ input, textarea, button {
 }
 @media (max-width: 599px) {
   #section-hero nav ul ul, #section-header nav ul ul {
-    position: static;
+    position: static !important;
     padding-right: 20px;
   }
 }
