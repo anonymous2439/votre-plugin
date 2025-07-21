@@ -78,7 +78,7 @@ function appointment_form_submit() {
 		$phone_number 	= sanitize_text_field($_POST['phone_number']);
 		$datetime 		= (new DateTime(sanitize_text_field($_POST['datetime'])))->format('F j, Y \a\t g:i A');
 
-		$to = 'votremailserver@gmail.com';
+		$to = 'info@votrestc.com';
 		$subject = 'Book an Appointment';
 		$body = "Name: $name\nPhone Number: $phone_number\nEmail: $email\nDate and Time: $datetime\n\n$message";
 		$headers = ['From: ' . $name . ' <' . $email . '>'];
