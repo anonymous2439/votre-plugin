@@ -40,9 +40,9 @@ export default function save(props) {
 									<li><b>Sunday</b> CLOSED</li>
 								</ul>
 								<ul class="social">
-									<li><a href="#!"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Instagram.png" alt="Instagram logo" /></figure></a></li>
-									<li><a href="#!"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Twitter.png" alt="Facebook logo" /></figure></a></li>
-									<li><a href="#!"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Facebook.png" alt="Twitter logo" /></figure></a></li>
+									<li><a href="https://www.instagram.com/votre_slimming_therapy_center/"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Instagram.png" alt="Instagram logo" /></figure></a></li>
+									<li><a href="#!"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Twitter.png" alt="twitter logo" /></figure></a></li>
+									<li><a href="https://www.facebook.com/votreslimmingtherapycenter/"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Facebook.png" alt="facebook logo" /></figure></a></li>
 								</ul>
 							</div>
 							<div className="map">
