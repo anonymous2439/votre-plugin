@@ -18,7 +18,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 export default function save(props) {
 
     const { setAttributes } = props;
-    const { images } = props.attributes;
+    const { images, services = [] } = props.attributes;
 
 	return (
 		<p { ...useBlockProps.save() }>
@@ -28,51 +28,27 @@ export default function save(props) {
 						<div class="info">
 							<h2>Services</h2>
 						</div>
-						<div class="boxes">
-                            <section>
+						<div className="boxes">
+                            {services.map((svc, i) => (
+                                <section key={i}>
                                 <figure>
-                                    {(images?.length > 0) && 
-                                        <img src={images[0].url} />
-                                    }
+                                    {svc.image && <img src={svc.image.url} alt={svc.image.alt || ''} />}
                                     <figcaption>
-                                        <p>Facial Treatments</p>
+                                    <p>{svc.title || `Service ${i + 1}`}</p>
                                     </figcaption>
                                 </figure>
-                                <a href="/votre/?page_id=212"></a>
-                            </section>
-                            <section>
-                                <figure>
-                                    {(images?.length > 1) && 
-                                        <img src={images[1].url} />
-                                    }
-                                    <figcaption>
-                                        <p>Nail Treatments</p>
-                                    </figcaption>
-                                </figure>
-                                <a href="/votre/?page_id=219"></a>
-                            </section>
-                            <section>
-                                <figure>
-                                    {(images?.length > 2) && 
-                                        <img src={images[2].url} />
-                                    }
-                                    <figcaption>
-                                        <p>Massage Therapies</p>
-                                    </figcaption>
-                                </figure>
-                                <a href="/votre/?page_id=216"></a>
-                            </section>
-                            <section>
-                                <figure>
-                                    {(images?.length > 3) && 
-                                        <img src={images[3].url} />
-                                    }
-                                    <figcaption>
-                                        <p>More</p>
-                                    </figcaption>
-                                </figure>
-                                <a href="/votre/?page_id=234"></a>
-                            </section>
+                                {svc.link ? (
+                                    <a
+                                    href={svc.link}
+                                    target={svc.target}
+                                    rel={svc.target === '_blank' ? 'noopener noreferrer' : undefined}
+                                    ></a>
+                                ) : (
+                                    // keep structure similar; empty anchor omitted if no link
+                                    null
+                                )}
+                                </section>
+                            ))}
                         </div>
 					</div>
 				</div>

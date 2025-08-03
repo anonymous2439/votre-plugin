@@ -28,29 +28,38 @@ import metadata from './block.json';
  */
 registerBlockType( metadata.name, {
 	attributes: {
-		"btnText": {
+		"address": {
 			"type": "string",
-			"default": "BOOK APPOINTMENT"
+			"default": "Shop 16 Ground Floor <br/>European Business Center - E311 - Dubai - <br/>United Arab Emirates"
 		},
-		"imageUrl": {
+		"phone": {
 			"type": "string",
-			"default": ""
+			"default": "+971 4 567 4949",
 		},
-		"imageId": {
-			"type": "number"
-		},
-		"imageUrl": {
+		"openHours": {
 			"type": "string",
-			"default": ""
+			"default": "<p><b>Monday - Saturday</b> 9 am - 8 pm<br /><b>Sunday</b> CLOSED</p>"
 		},
-		"title": {
+		"header": {
 			"type": "string",
-			"default": "Look Your Best"
+			"default": "OPEN HOURS",
 		},
-		"subtitle": {
+		"instagramUrl": {
 			"type": "string",
-			"default": "Feel Your Best",
-		}
+			"default": "https://www.instagram.com/votre_slimming_therapy_center/",
+		},
+		"twitterUrl": {
+			"type": "string",
+			"default": "#!",
+		},
+		"facebookUrl": {
+			"type": "string",
+			"default": "https://www.facebook.com/votreslimmingtherapycenter/",
+		},
+		"copyright": {
+			"type": "string",
+			"default": "© 2025 Votre Slimming Therapy Cente",
+		},
 	},
 	/**
 	 * @see ./edit.js

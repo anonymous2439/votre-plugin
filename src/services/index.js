@@ -31,6 +31,17 @@ registerBlockType( metadata.name, {
 		images: {
 			type: 'array',
 			default: []
+		},
+		boxes: {
+			type: 'array',
+			default: []
+		},
+		"services": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			}
 		}
 	},
 	/**

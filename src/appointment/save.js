@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -16,7 +16,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save(props) {
-	const { btnText, imageUrl, imageId, imageAlt, title, subtitle } = props.attributes;
+	const { btnText, imageUrl, imageId, imageAlt, intro, intro2 } = props.attributes;
 
 	return (
 		<p { ...useBlockProps.save() }>
@@ -36,7 +36,10 @@ export default function save(props) {
 							</div>
 							<figcaption>
 								<div className='bg-bullet'></div>
-								<h4>Schedule Your <span>Salon Experience</span></h4>
+								<h4>
+									<RichText.Content tagName="span" value={intro} />
+									<RichText.Content tagName="span" value={intro2} />
+								</h4>
 							</figcaption>
 						</figure>
 
@@ -47,12 +50,25 @@ export default function save(props) {
 							<input placeholder="Phone Number" name='phone_number' required />
 							<input placeholder="Email" type='email' name='email' required />
 
-							<input class="datetime" type='datetime-local' name='datetime' required />
+							{/* <input class="datetime" type='datetime-local' name='datetime' required /> */}
+							<input
+								id="datetime"
+								class="datetime"
+								type="text"
+								placeholder="Date and Time"
+								required
+								onfocus="this.type='datetime-local'"
+								onblur="if (!this.value) this.type='text'"
+								name="datetime"
+							/>
 
 							<textarea placeholder="Write a short note" name='message'></textarea>
 
 							<button type="submit" name='appointment_form_submit'>
-								BOOK APPOINTMENT
+								<RichText.Content
+									tagName="span"
+									value={btnText}
+								/>
 							</button>
 						</form>
 

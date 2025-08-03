@@ -43,13 +43,13 @@ registerBlockType( metadata.name, {
 			"type": "string",
 			"default": ""
 		},
-		"title": {
+		"intro": {
 			"type": "string",
-			"default": "Look Your Best"
+			"default": "Schedule your"
 		},
-		"subtitle": {
+		"intro2": {
 			"type": "string",
-			"default": "Feel Your Best",
+			"default": "Salon Experience",
 		}
 	},
 	/**

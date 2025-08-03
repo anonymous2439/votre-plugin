@@ -1,2 +1,241 @@
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/appointment/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
-body{font-family:maven pro;margin:0}.wrapper{margin:auto;max-width:1440px;padding:40px 25px}.section,.wrapper{position:relative}figure{margin:0}:root{--color-primary:#6b6b3b;--color-secondary:#f6ee34;--color-tertiary:#d8d4a3;--text-header-style:#2c2c2c;--text-paragraph-style:#fff}h1,h2,h3,h4,p{margin:0}button,input,textarea{box-sizing:border-box}#section-appointment .container{display:flex;gap:95px;justify-content:space-between}#section-appointment .container figure{position:relative}#section-appointment .container figure .img-wrapper{filter:blur(2px);position:relative}#section-appointment .container figure img:first-of-type{clip-path:polygon(0 0,63% 0,63% 100%,0 100%)}#section-appointment .container figure img.img-curve{clip-path:circle(43.03% at 59% 50%);right:0;position:absolute;top:0}#section-appointment .container figure figcaption{align-items:center;display:flex;height:210px;padding:20px 71px 20px 0;position:absolute;top:50%;transform:translateY(-50%);width:64%}#section-appointment .container figure figcaption:before{border-radius:100%;clip-path:polygon(50% 0,100% 0,100% 100%,50% 100%);content:"";height:100%;position:absolute;left:-105px;top:0;width:210px}#section-appointment .container figure figcaption .bg-bullet{align-items:center;background:hsla(0,0%,100%,.576);display:flex;height:100%;right:0;position:absolute;top:0;width:100%}#section-appointment .container figure figcaption .bg-bullet:before{background:hsla(0,0%,100%,.576);border-radius:100%;clip-path:polygon(50% 0,100% 0,100% 100%,50% 100%);content:"";height:100%;position:absolute;left:-105px;top:0;width:210px}#section-appointment .container figure figcaption h4{font-size:60px;white-space:nowrap;z-index:1}#section-appointment .container figure figcaption h4 span{display:block}#section-appointment .container form{align-content:flex-start;display:flex;flex-wrap:wrap;justify-content:space-between;row-gap:24px}#section-appointment .container form input{height:60px;width:calc(50% - 18px)}#section-appointment .container form input,#section-appointment .container form textarea{border:1px solid var(--color-primary);border-radius:10px;padding:10px 26px}#section-appointment .container form .datetime{font-family:maven pro;width:100%}#section-appointment .container form textarea{font-family:maven pro;height:120px;resize:none;width:100%}#section-appointment .container form button{background:var(--color-primary);border-radius:10px;box-sizing:border-box;color:var(--color-secondary);cursor:pointer;font-size:30px;height:96px;margin:0 auto;max-width:371px;width:100%}@media(max-width:1200px){#section-appointment .container{align-items:flex-start;gap:25px}#section-appointment .container figure,#section-appointment .container form{width:50%}#section-appointment .container figure img{width:100%}#section-appointment .container figure figcaption{height:165px;padding:21px 25px 20px 0}#section-appointment .container figure figcaption h4{font-size:45px}}@media(max-width:1024px){#section-appointment .container{flex-direction:column}#section-appointment .container figure{width:100%}#section-appointment .container figure .img-wrapper{filter:unset;height:400px;overflow:hidden}#section-appointment .container figure img.img-curve{display:none}#section-appointment .container figure img:first-of-type{clip-path:unset;position:relative;top:50%;transform:translateY(-42%)}#section-appointment .container figure figcaption{justify-content:center;padding:0;position:relative;text-align:center;transform:unset;width:100%}#section-appointment .container figure figcaption:before{display:none}#section-appointment .container form{width:100%}#section-appointment .container figure figcaption .bg-bullet{display:none}}@media(max-width:480px){#section-appointment .container form input{width:100%}}
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/appointment/style.scss (1) ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+body {
+  margin: 0;
+  font-family: "maven pro";
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+  position: relative;
+  padding: 40px 25px;
+}
+
+.section {
+  position: relative;
+}
+
+figure {
+  margin: 0;
+}
+
+:root {
+  --color-primary: #6B6B3B;
+  --color-secondary: #F6EE34;
+  --color-tertiary: #D8D4A3;
+  --text-header-style: #2c2c2c;
+  --text-paragraph-style: #ffffff;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+input, textarea, button {
+  box-sizing: border-box;
+}
+
+#section-appointment .container {
+  display: flex;
+  gap: 95px;
+  justify-content: space-between;
+}
+
+#section-appointment .container figure {
+  position: relative;
+}
+
+#section-appointment .container figure .img-wrapper {
+  position: relative;
+  filter: blur(2px);
+}
+
+#section-appointment .container figure img:first-of-type {
+  clip-path: polygon(0 0, 63% 0, 63% 100%, 0% 100%);
+}
+
+#section-appointment .container figure img.img-curve {
+  position: absolute;
+  right: 0;
+  top: 0;
+  clip-path: circle(43.03% at 59% 50%);
+}
+
+#section-appointment .container figure figcaption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64%;
+  padding: 20px 71px 20px 0;
+  height: 210px;
+  display: flex;
+  align-items: center;
+}
+
+#section-appointment .container figure figcaption::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 210px;
+  border-radius: 100%;
+  left: -105px;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  top: 0;
+}
+
+#section-appointment .container figure figcaption .bg-bullet {
+  background: rgba(255, 255, 255, 0.5764705882);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#section-appointment .container figure figcaption .bg-bullet::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.5764705882);
+  position: absolute;
+  height: 100%;
+  width: 210px;
+  border-radius: 100%;
+  left: -105px;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  top: 0;
+}
+
+#section-appointment .container figure figcaption h4 {
+  font-size: 60px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+#section-appointment .container figure figcaption h4 span {
+  display: block;
+  white-space: nowrap !important;
+}
+
+#section-appointment .container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 24px;
+  align-content: flex-start;
+}
+
+#section-appointment .container form input {
+  width: calc(50% - 18px);
+  height: 60px;
+}
+
+#section-appointment .container form input, #section-appointment .container form textarea {
+  border: 1px solid var(--color-primary);
+  padding: 10px 26px;
+  border-radius: 10px;
+}
+
+#section-appointment .container form .datetime {
+  width: 100%;
+  font-family: "maven pro";
+}
+
+#section-appointment .container form textarea {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  font-family: "maven pro";
+}
+
+#section-appointment .container form button {
+  max-width: 371px;
+  width: 100%;
+  height: 96px;
+  box-sizing: border-box;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  font-size: 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  #section-appointment .container {
+    gap: 25px;
+    align-items: flex-start;
+  }
+  #section-appointment .container form {
+    width: 50%;
+  }
+  #section-appointment .container figure {
+    width: 50%;
+  }
+  #section-appointment .container figure img {
+    width: 100%;
+  }
+  #section-appointment .container figure figcaption {
+    padding: 21px 25px 20px 0;
+    height: 165px;
+  }
+  #section-appointment .container figure figcaption h4 {
+    font-size: 45px;
+  }
+}
+@media (max-width: 1024px) {
+  #section-appointment .container {
+    flex-direction: column;
+  }
+  #section-appointment .container figure {
+    width: 100%;
+  }
+  #section-appointment .container figure .img-wrapper {
+    filter: unset;
+    height: 400px;
+    overflow: hidden;
+  }
+  #section-appointment .container figure img.img-curve {
+    display: none;
+  }
+  #section-appointment .container figure img:first-of-type {
+    clip-path: unset;
+    position: relative;
+    top: 50%;
+    transform: translateY(-42%);
+  }
+  #section-appointment .container figure figcaption {
+    padding: 0;
+    position: relative;
+    transform: unset;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+  #section-appointment .container figure figcaption::before {
+    display: none;
+  }
+  #section-appointment .container figure figcaption h4 {
+    white-space: normal;
+  }
+  #section-appointment .container figure figcaption h4 span {
+    white-space: normal !important;
+  }
+  #section-appointment .container form {
+    width: 100%;
+  }
+  #section-appointment .container figure figcaption .bg-bullet {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  #section-appointment .container form input {
+    width: 100%;
+  }
+}

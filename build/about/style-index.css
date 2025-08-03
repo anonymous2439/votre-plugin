@@ -1,2 +1,118 @@
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/about/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
-body{font-family:maven pro;margin:0}.wrapper{margin:auto;max-width:1440px;padding:40px 25px}.section,.wrapper{position:relative}figure{margin:0}:root{--color-primary:#6b6b3b;--color-secondary:#f6ee34;--color-tertiary:#d8d4a3;--text-header-style:#2c2c2c;--text-paragraph-style:#fff}h1,h2,h3,h4,p{margin:0}button,input,textarea{box-sizing:border-box}#section-about .container{align-items:flex-start;display:flex;gap:17px;justify-content:space-between}#section-about .container section{background:var(--color-tertiary);border:1px solid #889633;border-radius:35px;min-height:716px;overflow:hidden;position:relative;width:100%}#section-about .container section:nth-of-type(2){background:#fff}#section-about .container section h2{background-color:var(--color-primary);color:var(--color-secondary);font-size:50px;padding:50px 85px}#section-about .container section p{background-color:var(--color-tertiary);color:#1f1f1f;font-size:25px;padding:38px 85px}#section-about .container section p a{background-color:var(--color-tertiary);color:#1f1f1f;display:block;font-size:25px;margin-top:46px}#section-about .container section img{display:block}@media(max-width:1024px){#section-about .container{flex-wrap:wrap}#section-about .container section{flex-wrap:wrap;width:100%}#section-about .container section:nth-of-type(2){margin:0 auto;max-width:716px}#section-about .container section:nth-of-type(2) img{left:50%;position:relative;transform:translateX(-50%)}}@media(max-width:599px){#section-about .container section p{padding:38px 25px}#section-about .container section h2{padding:50px 25px}}
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/about/style.scss (1) ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+body {
+  margin: 0;
+  font-family: "maven pro";
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+  position: relative;
+  padding: 40px 25px;
+}
+
+.section {
+  position: relative;
+}
+
+figure {
+  margin: 0;
+}
+
+:root {
+  --color-primary: #6B6B3B;
+  --color-secondary: #F6EE34;
+  --color-tertiary: #D8D4A3;
+  --text-header-style: #2c2c2c;
+  --text-paragraph-style: #ffffff;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+input, textarea, button {
+  box-sizing: border-box;
+}
+
+#section-about .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 17px;
+  align-items: flex-start;
+}
+
+#section-about .container section {
+  border: 1px solid #889633;
+  width: 100%;
+  border-radius: 35px;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-tertiary);
+  min-height: 716px;
+}
+
+#section-about .container section:nth-of-type(2) {
+  background: #fff;
+}
+
+#section-about .container section h2 {
+  background-color: var(--color-primary);
+  font-size: 50px;
+  padding: 50px 85px;
+  color: var(--color-secondary);
+}
+
+#section-about .container section p {
+  padding: 38px 85px;
+  color: #1F1F1F;
+  font-size: 25px;
+  background-color: var(--color-tertiary);
+}
+
+#section-about .container section p a {
+  display: block;
+  margin-top: 46px;
+  color: #1F1F1F;
+  font-size: 25px;
+  background-color: var(--color-tertiary);
+}
+
+#section-about .container section img {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  #section-about .container {
+    flex-wrap: wrap;
+  }
+  #section-about .container section {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  #section-about .container section:nth-of-type(2) {
+    max-width: 716px;
+    margin: 0 auto;
+  }
+  #section-about .container section:nth-of-type(2) img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 599px) {
+  #section-about .container section p {
+    padding: 38px 25px;
+  }
+  #section-about .container section h2 {
+    padding: 50px 25px;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

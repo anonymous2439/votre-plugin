@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -16,7 +16,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save(props) {
-	// const { btnText, imageUrl, imageId, imageAlt, title, subtitle } = props.attributes;
+	const { address, phone, header, openHours, instagramUrl, twitterUrl, facebookUrl } = props.attributes;
 
 	return (
 		<p { ...useBlockProps.save() }>
@@ -28,21 +28,29 @@ export default function save(props) {
 							<div class="content">
 								<ul class="contact">
 									<li>
-										<address>Shop 16 Ground Floor 
-											European Business Center - E311 - Dubai - 
-											United Arab Emirates</address>
+										<RichText.Content
+											tagName="address"
+											value={address}
+										/>
 									</li>
-									<li>+971 4 567 4949</li>
+									<li>
+										<RichText.Content
+											tagName="phone"
+											value={phone}
+										/>
+									</li>
 								</ul>
-								<h4>OPEN HOURS</h4>
-								<ul class="open">
-									<li><b>Monday - Saturday</b> 9 am - 8 pm</li>
-									<li><b>Sunday</b> CLOSED</li>
-								</ul>
+								<RichText.Content
+									tagName="h4"
+									value={header}
+								/>
+								<div class="open">
+									<RichText.Content tagName="p" value={openHours} />
+								</div>
 								<ul class="social">
-									<li><a href="https://www.instagram.com/votre_slimming_therapy_center/"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Instagram.png" alt="Instagram logo" /></figure></a></li>
-									<li><a href="#!"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Twitter.png" alt="twitter logo" /></figure></a></li>
-									<li><a href="https://www.facebook.com/votreslimmingtherapycenter/"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Facebook.png" alt="facebook logo" /></figure></a></li>
+									<li><a href={instagramUrl}><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Instagram.png" alt="Instagram logo" /></figure></a></li>
+									{/* <li><a href={twitterUrl}><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Twitter.png" alt="twitter logo" /></figure></a></li> */}
+									<li><a href={facebookUrl}><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Facebook.png" alt="facebook logo" /></figure></a></li>
 								</ul>
 							</div>
 							<div className="map">

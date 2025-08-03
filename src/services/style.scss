@@ -20,7 +20,8 @@
         #section-services .info{}
         #section-services .info h2{font-size: 50px;color: var(--color-primary);margin: 0 0 48px 85px; font-weight: normal;}
         #section-services .boxes{display: flex;gap: 21px;justify-content: space-between;align-items: center;}
-        #section-services .boxes section{background:#fff; position: relative;display: flex;flex-direction: column;justify-content: center;align-items: center;border: 1px solid #889633;width: 100%; transition: .6s;}
+        #section-services .boxes section{background:#fff; position: relative;display: flex;flex-direction: column;justify-content: center;align-items: center;width: 100%; transition: .6s;}
+        #section-services .boxes section figure {border: 1px solid #889633;}
         #section-services .boxes section figure img {display: block; max-width: 100%;}
         #section-services .boxes section figcaption {background: var(--color-primary); padding: 16px 10px;}
         #section-services .boxes section figcaption p{font-size: 25px; color: #fff; text-align: center;}

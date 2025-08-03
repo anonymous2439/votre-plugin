@@ -32,7 +32,7 @@ import './editor.scss';
  */
 export default function Edit(props) {
 	const { setAttributes, isSelected } = props
-	const { btnText, imageUrl, imageId, imageAlt, title, subtitle } = props.attributes;
+	const { btnText, imageUrl, imageId, imageAlt, intro, intro2 } = props.attributes;
 
 	const onSelectImage = (media) => {
 		setAttributes({
@@ -80,7 +80,20 @@ export default function Edit(props) {
 							</div>
 							<figcaption>
 								<div className='bg-bullet'></div>
-								<h4>Schedule Your <span>Salon Experience</span></h4>
+								<h4>
+									<RichText
+										tagName="span"
+										value={intro}
+										onChange={(value) => setAttributes({ intro: value })}
+										placeholder="Enter text..."
+									/>
+									<RichText
+										tagName="span"
+										value={intro2}
+										onChange={(value) => setAttributes({ intro2: value })}
+										placeholder="Enter text..."
+									/>
+								</h4>
 							</figcaption>
 						</figure>
 
@@ -91,12 +104,27 @@ export default function Edit(props) {
 							<input placeholder="Phone Number" />
 							<input placeholder="Email" />
 
-							<input class="datetime" type='datetime-local' name='datetime' required />
+							{/* <input class="datetime" type='datetime-local' name='datetime' required /> */}
+							<input
+								id="datetime"
+								class="datetime"
+								type="text"
+								placeholder="Date and Time"
+								required
+								onfocus="this.type='datetime-local'"
+								onblur="if (!this.value) this.type='text'"
+								name="datetime"
+							/>
 
 							<textarea placeholder="Write a short note"></textarea>
 
-							<button type="submit">
-								BOOK APPOINTMENT
+							<button type="button">
+								<RichText
+									tagName="span"
+									value={btnText}
+									onChange={(value) => setAttributes({ btnText: value })}
+									placeholder="Enter text..."
+								/>
 							</button>
 						</form>
 

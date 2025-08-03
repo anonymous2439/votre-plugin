@@ -1,149 +1,171 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
 import { __ } from '@wordpress/i18n';
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps, RichText, InspectorControls, MediaUpload, MediaUploadCheck, InnerBlocks  } from '@wordpress/block-editor';
-import { PanelBody, SelectControl, Button } from '@wordpress/components';
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
+import {
+	useBlockProps,
+	RichText,
+	InspectorControls,
+	MediaUpload,
+	MediaUploadCheck,
+} from '@wordpress/block-editor';
+import { PanelBody, TextControl, Button, ButtonGroup } from '@wordpress/components';
 import './editor.scss';
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {Element} Element to render.
- */
+const normalizeUrl = (url) => {
+	if (!url) return '';
+	try {
+		const hasProtocol = /^[a-zA-Z][a-zA-Z\d+\-.]*:\/\//.test(url);
+		return new URL(hasProtocol ? url : `https://${url}`).toString();
+	} catch {
+		return url;
+	}
+};
+
 export default function Edit(props) {
+	const { attributes, setAttributes } = props;
+	const { services = [] } = attributes;
+	const blockProps = useBlockProps();
 
-    const { setAttributes } = props;
-    const { images } = props.attributes;
+	const updateService = (index, fields) => {
+		const updated = [...services];
+		updated[index] = { ...updated[index], ...fields };
+		setAttributes({ services: updated });
+	};
 
-    const onAddImage = (media) => {
-        setAttributes({
-            images: [...images, media]
-        });
-    };
+	const removeService = (index) => {
+		const updated = [...services];
+		updated.splice(index, 1);
+		setAttributes({ services: updated });
+	};
+
+	const addService = () => {
+		setAttributes({
+		services: [
+			...services,
+			{
+				image: null,
+				title: '',
+				link: '',
+				target: '_self',
+			},
+		],
+		});
+	};
 
 	return (
-		<div { ...useBlockProps() }>
+		<div {...blockProps}>
+			<InspectorControls>
+				<PanelBody title={__('Service Boxes', 'your-textdomain')} initialOpen={true}>
+				<Button isPrimary onClick={addService} style={{ marginBottom: '1rem' }}>
+					Add Service Box
+				</Button>
 
-            <InspectorControls>
-                <PanelBody title="Image Settings" initialOpen={true}>
-                    <MediaUploadCheck>
-                        <MediaUpload
-                            onSelect={(media) => {
-                                setAttributes({
-                                    images: [...images, {
-                                        id: media.id,
-                                        url: media.url,
-                                        alt: media.alt,
-                                        caption: media.caption || ''
-                                    }]
-                                });
-                            }}
-                            allowedTypes={['image']}
-                            render={({ open }) => (
-                                <Button onClick={open} isSecondary>
-                                    Add Image
-                                </Button>
-                            )}
-                        />
-                    </MediaUploadCheck>
+				{services.map((svc, index) => (
+					<div
+					key={index}
+					style={{
+						border: '1px solid #ddd',
+						padding: '0.75rem',
+						marginBottom: '1rem',
+						borderRadius: '6px',
+					}}
+					>
+					<strong>{`Service #${index + 1}`}</strong>
 
-                    {/* Image list preview with remove option */}
-                    {images?.length > 0 && (
-                        <ul style={{ marginTop: '1rem' }}>
-                            {images.map((img, index) => (
-                                <li key={img.id || index} style={{ marginBottom: '1rem' }}>
-                                    <img src={img.url} alt={img.alt} style={{ width: '100%', maxHeight: '100px', objectFit: 'cover' }} />
-                                    <Button
-                                        isLink
-                                        isDestructive
-                                        onClick={() => {
-                                            const newImages = [...images];
-                                            newImages.splice(index, 1);
-                                            setAttributes({ images: newImages });
-                                        }}
-                                    >
-                                        Remove
-                                    </Button>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </PanelBody>
-            </InspectorControls>
-
-			<div id="section-services" class="section">
-				<div class="wrapper">
-					<div class="container">
-						<div class="info">
-							<h2>Services</h2>
+					<div style={{ marginTop: '0.5rem' }}>
+						<MediaUploadCheck>
+						<MediaUpload
+							onSelect={(media) =>
+							updateService(index, {
+								image: {
+								id: media.id,
+								url: media.url,
+								alt: media.alt,
+								caption: media.caption || '',
+								},
+							})
+							}
+							allowedTypes={['image']}
+							value={svc.image?.id}
+							render={({ open }) => (
+							<Button onClick={open} isSecondary style={{ marginBottom: '0.5rem' }}>
+								{svc.image ? 'Change Image' : 'Select Image'}
+							</Button>
+							)}
+						/>
+						</MediaUploadCheck>
+						{svc.image && (
+						<div style={{ marginBottom: '0.5rem' }}>
+							<img
+							src={svc.image.url}
+							alt={svc.image.alt || ''}
+							style={{ width: '100%', maxHeight: '100px', objectFit: 'cover' }}
+							/>
 						</div>
-						<div class="boxes">
-                            <section>
-                                <figure>
-                                    {(images?.length > 0) && 
-                                        <img src={images[0].url} />
-                                    }
-                                    <figcaption>
-                                        <p>Facial Treatments</p>
-                                    </figcaption>
-                                </figure>
-                                <a href="/votre/?page_id=212"></a>
-                            </section>
-                            <section>
-                                <figure>
-                                    {(images?.length > 1) && 
-                                        <img src={images[1].url} />
-                                    }
-                                    <figcaption>
-                                        <p>Nail Treatments</p>
-                                    </figcaption>
-                                </figure>
-                                <a href="/votre/?page_id=219"></a>
-                            </section>
-                            <section>
-                                <figure>
-                                    {(images?.length > 2) && 
-                                        <img src={images[2].url} />
-                                    }
-                                    <figcaption>
-                                        <p>Massage Therapies</p>
-                                    </figcaption>
-                                </figure>
-                                <a href="/votre/?page_id=216"></a>
-                            </section>
-                            <section>
-                                <figure>
-                                    {(images?.length > 3) && 
-                                        <img src={images[3].url} />
-                                    }
-                                    <figcaption>
-                                        <p>More</p>
-                                    </figcaption>
-                                </figure>
-                                <a href="/votre/?page_id=234"></a>
-                            </section>
-                        </div>
+						)}
 					</div>
+
+					<TextControl
+						label="Title"
+						value={svc.title}
+						onChange={(val) => updateService(index, { title: val })}
+						placeholder="Service title"
+					/>
+
+					<TextControl
+						label="URL"
+						value={svc.link}
+						onChange={(val) => updateService(index, { link: val })}
+						placeholder="https://example.com"
+					/>
+
+					<ButtonGroup style={{ marginTop: '0.5rem' }}>
+						<Button
+						isSecondary
+						onClick={() =>
+							updateService(index, {
+							target: svc.target === '_self' ? '_blank' : '_self',
+							})
+						}
+						>
+						Open {svc.target === '_self' ? 'same tab' : 'in new tab'}
+						</Button>
+						<Button isDestructive onClick={() => removeService(index)}>
+						Remove
+						</Button>
+					</ButtonGroup>
+					</div>
+				))}
+				</PanelBody>
+			</InspectorControls>
+
+			{/* Editor preview */}
+			<div id="section-services" className="section">
+				<div className="wrapper">
+				<div className="container">
+					<div className="info">
+					<h2>Services</h2>
+					</div>
+					<div className="boxes">
+					{services.map((svc, i) => (
+						<section key={i}>
+						<figure>
+							{svc.image && <img src={svc.image.url} alt={svc.image.alt || ''} />}
+							<figcaption>
+							<p>{svc.title || `Service ${i + 1}`}</p>
+							</figcaption>
+						</figure>
+						{svc.link ? (
+							<a
+							href={svc.link}
+							target={svc.target}
+							rel={svc.target === '_blank' ? 'noopener noreferrer' : undefined}
+							></a>
+						) : (
+							<span style={{ display: 'none' }} />
+						)}
+						</section>
+					))}
+					</div>
+				</div>
 				</div>
 			</div>
 		</div>

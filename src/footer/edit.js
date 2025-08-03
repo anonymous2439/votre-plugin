@@ -12,7 +12,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps, RichText, InspectorControls, MediaUpload, MediaUploadCheck, InnerBlocks  } from '@wordpress/block-editor';
-import { PanelBody, SelectControl, Button } from '@wordpress/components';
+import { PanelBody, SelectControl, Button, TextControl } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,20 +31,48 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 
+
+const normalizeUrl = (url) => {
+  if (!url) return '';
+  try {
+    // If user omitted protocol, assume https
+    const hasProtocol = /^[a-zA-Z][a-zA-Z\d+\-.]*:\/\//.test(url);
+    const normalized = new URL(hasProtocol ? url : `https://${url}`);
+    return normalized.toString();
+  } catch {
+    return url; // leave as-is; could flag invalid separately
+  }
+};
+
 export default function Edit(props) {
 	const { setAttributes, isSelected } = props
-	// const { btnText, imageUrl, imageId, imageAlt, title, subtitle } = props.attributes;
-
-	// const onSelectImage = (media) => {
-	// 	setAttributes({
-	// 		imageUrl: media.url,
-	// 		imageId: media.id,
-	// 		imageAlt: media.alt,
-	// 	});
-	// };
+	const { address, phone, header, openHours, instagramUrl, twitterUrl, facebookUrl } = props.attributes;
 
 	return (
 		<div { ...useBlockProps() }>
+
+			<InspectorControls>
+				<PanelBody title={__('Social Media Links', 'example')} initialOpen>
+					<TextControl
+						label="Instagram URL"
+						value={instagramUrl}
+						onChange={(val) => setAttributes({ instagramUrl: val })}
+						placeholder="https://instagram.com/yourprofile"
+					/>
+					<TextControl
+						label="Twitter URL"
+						value={twitterUrl}
+						onChange={(val) => setAttributes({ twitterUrl: val })}
+						placeholder="https://twitter.com/yourhandle"
+					/>
+					<TextControl
+						label="Facebook URL"
+						value={facebookUrl}
+						onChange={(val) => setAttributes({ facebookUrl: val })}
+						placeholder="https://facebook.com/yourpage"
+					/>
+				</PanelBody>
+			</InspectorControls>
 
 			<footer>
 				<div class="wrapper">
@@ -53,21 +81,44 @@ export default function Edit(props) {
 							<div class="content">
 								<ul class="contact">
 									<li>
-										<address>Shop 16 Ground Floor 
-											European Business Center - E311 - Dubai - 
-											United Arab Emirates</address>
+										<RichText
+											tagName="address"
+											value={address}
+											onChange={(value) => setAttributes({ address: value })}
+											placeholder="Enter Address..."
+										/>
 									</li>
-									<li>+971 4 567 4949</li>
+									<li>
+										<RichText
+											tagName="span"
+											value={phone}
+											onChange={(value) => setAttributes({ phone: value })}
+											placeholder="Enter Phone Number..."
+										/>
+									</li>
 								</ul>
-								<h4>OPEN HOURS</h4>
-								<ul class="open">
+								<RichText
+									tagName="h4"
+									value={header}
+									onChange={(value) => setAttributes({ header: value })}
+									placeholder="Enter Header..."
+								/>
+								{/* <ul class="open">
 									<li><b>Monday - Saturday</b> 9 am - 8 pm</li>
 									<li><b>Sunday</b> CLOSED</li>
-								</ul>
+								</ul> */}
+								<div className='open'>
+									<RichText
+										tagName="p"
+										value={openHours}
+										onChange={(newVal) => setAttributes({ openHours: newVal })}
+										placeholder="Schedule here…"
+									/>
+								</div>
 								<ul class="social">
-									<li><a href="#!"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Instagram.png" alt="Instagram logo" /></figure></a></li>
-									<li><a href="#!"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Twitter.png" alt="Facebook logo" /></figure></a></li>
-									<li><a href="#!"><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Facebook.png" alt="Twitter logo" /></figure></a></li>
+									<li><a href={instagramUrl}><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Instagram.png" alt="Instagram logo" /></figure></a></li>
+									{/* <li><a href={twitterUrl}><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Twitter.png" alt="Facebook logo" /></figure></a></li> */}
+									<li><a href={facebookUrl}><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Facebook.png" alt="Twitter logo" /></figure></a></li>
 								</ul>
 							</div>
 							<div className="map">

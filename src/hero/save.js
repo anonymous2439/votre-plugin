@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 import 'animate.css';
 
 
@@ -48,8 +48,16 @@ export default function save(props) {
 						
 						<div class="info">
 							<h1>
-								<span class="primary">{title}</span>
-								<span class="secondary">{subtitle}</span>
+								<RichText.Content
+									tagName="span"
+									value={title}
+									class="primary"
+								/>
+								<RichText.Content
+									tagName="span"
+									value={subtitle}
+									class="secondary"
+								/>
 							</h1>
 							<a href='#section-appointment'>{btnText}</a>
 						</div>
