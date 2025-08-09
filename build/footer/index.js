@@ -87,7 +87,8 @@ function Edit(props) {
     openHours,
     instagramUrl,
     twitterUrl,
-    facebookUrl
+    facebookUrl,
+    copyright
   } = props.attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
@@ -213,8 +214,13 @@ function Edit(props) {
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               class: "copyright",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                children: "\xA9 2025 Votre Slimming Therapy Cente"
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+                tagName: "p",
+                value: copyright,
+                onChange: newVal => setAttributes({
+                  copyright: newVal
+                }),
+                placeholder: "Copyright here\u2026"
               })
             })]
           })]
@@ -319,7 +325,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     "copyright": {
       "type": "string",
-      "default": "© 2025 Votre Slimming Therapy Cente"
+      "default": "© 2025 Votre Slimming Therapy Center"
     }
   },
   /**
@@ -374,7 +380,8 @@ function save(props) {
     openHours,
     instagramUrl,
     twitterUrl,
-    facebookUrl
+    facebookUrl,
+    copyright
   } = props.attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
@@ -456,8 +463,9 @@ function save(props) {
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
               class: "copyright",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                children: "\xA9 2025 Votre Slimming Therapy Center"
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+                tagName: "p",
+                value: copyright
               })
             })]
           })]

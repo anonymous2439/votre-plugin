@@ -21,7 +21,7 @@ const normalizeUrl = (url) => {
 
 export default function Edit(props) {
 	const { attributes, setAttributes } = props;
-	const { services = [] } = attributes;
+	const { services = [], title } = attributes;
 	const blockProps = useBlockProps();
 
 	const updateService = (index, fields) => {
@@ -142,7 +142,12 @@ export default function Edit(props) {
 				<div className="wrapper">
 				<div className="container">
 					<div className="info">
-					<h2>Services</h2>
+					<RichText
+						tagName="h2"
+						value={title}
+						onChange={(newVal) => setAttributes({ title: newVal })}
+						placeholder="Title here…"
+					/>
 					</div>
 					<div className="boxes">
 					{services.map((svc, i) => (

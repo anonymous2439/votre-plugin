@@ -58,7 +58,7 @@ registerBlockType( metadata.name, {
 		},
 		"copyright": {
 			"type": "string",
-			"default": "© 2025 Votre Slimming Therapy Cente",
+			"default": "© 2025 Votre Slimming Therapy Center",
 		},
 	},
 	/**

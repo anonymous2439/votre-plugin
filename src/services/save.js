@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -18,7 +18,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 export default function save(props) {
 
     const { setAttributes } = props;
-    const { images, services = [] } = props.attributes;
+    const { title, services = [] } = props.attributes;
 
 	return (
 		<p { ...useBlockProps.save() }>
@@ -26,7 +26,10 @@ export default function save(props) {
 				<div class="wrapper">
 					<div class="container">
 						<div class="info">
-							<h2>Services</h2>
+							<RichText.Content
+                                tagName="h2"
+                                value={title}
+                            />
 						</div>
 						<div className="boxes">
                             {services.map((svc, i) => (

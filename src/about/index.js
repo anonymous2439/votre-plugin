@@ -50,6 +50,14 @@ registerBlockType( metadata.name, {
     here for a quick haircut or a full 
     pampering session, we strive to make 
     every visit enjoyable and tailored to your needs. Your comfort and satisfaction are always our top priorities.`,
+		},
+		"link" : {
+			"type": "string",
+			"default": "#!"
+		},
+		"btnText": {
+			"type": "string",
+			"default": "Read More"
 		}
 	},
 	/**

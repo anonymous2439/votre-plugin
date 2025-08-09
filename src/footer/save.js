@@ -16,7 +16,7 @@ import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save(props) {
-	const { address, phone, header, openHours, instagramUrl, twitterUrl, facebookUrl } = props.attributes;
+	const { address, phone, header, openHours, instagramUrl, twitterUrl, facebookUrl, copyright } = props.attributes;
 
 	return (
 		<p { ...useBlockProps.save() }>
@@ -76,7 +76,10 @@ export default function save(props) {
 								<InnerBlocks.Content templateId="navigation" />
 							</div>
 							<div class="copyright">
-								<p>© 2025 Votre Slimming Therapy Center</p>
+								<RichText.Content
+									tagName="p"
+									value={copyright}
+								/>
 							</div>
 						</div>
 					</div>

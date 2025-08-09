@@ -46,7 +46,7 @@ const normalizeUrl = (url) => {
 
 export default function Edit(props) {
 	const { setAttributes, isSelected } = props
-	const { address, phone, header, openHours, instagramUrl, twitterUrl, facebookUrl } = props.attributes;
+	const { address, phone, header, openHours, instagramUrl, twitterUrl, facebookUrl, copyright } = props.attributes;
 
 	return (
 		<div { ...useBlockProps() }>
@@ -148,7 +148,12 @@ export default function Edit(props) {
 								/>
 							</div>
 							<div class="copyright">
-								<p>© 2025 Votre Slimming Therapy Cente</p>
+								<RichText
+									tagName="p"
+									value={copyright}
+									onChange={(newVal) => setAttributes({ copyright: newVal })}
+									placeholder="Copyright here…"
+								/>
 							</div>
 						</div>
 					</div>

@@ -16,7 +16,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save(props) {
-	const { imageUrl, imageId, imageAlt, header, info } = props.attributes;
+	const { imageUrl, imageId, imageAlt, header, info, link, btnText } = props.attributes;
 
 	return (
 		<p { ...useBlockProps.save() }>
@@ -26,10 +26,15 @@ export default function save(props) {
 					<div class="container">
 						<section>
 							<h2>{header}</h2>
-							<p>
-								<RichText.Content tagName="span" value={info} />
-								<a href="/votre/?page_id=198">Read more</a>
-							</p>
+							<main>
+								<RichText.Content tagName="p" value={info} />
+								<a href={link || '#'}>
+									<RichText.Content
+										tagName="span"
+										value={btnText}
+									/>
+								</a>
+							</main>
 						</section>
 						<section>
 							<figure>

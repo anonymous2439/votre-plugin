@@ -69,14 +69,14 @@ input, textarea, button {
   color: var(--color-secondary);
 }
 
-#section-about .container section p {
+#section-about .container section main {
   padding: 38px 85px;
   color: #1F1F1F;
   font-size: 25px;
   background-color: var(--color-tertiary);
 }
 
-#section-about .container section p a {
+#section-about .container section main a {
   display: block;
   margin-top: 46px;
   color: #1F1F1F;

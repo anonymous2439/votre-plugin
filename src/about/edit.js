@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, RichText, InspectorControls, MediaUpload, MediaUploadCheck  } from '@wordpress/block-editor';
+import { useBlockProps, RichText, InspectorControls, MediaUpload, MediaUploadCheck, URLInputButton  } from '@wordpress/block-editor';
 import { PanelBody, SelectControl, Button } from '@wordpress/components';
 
 /**
@@ -30,10 +30,13 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
+
+import { useSelect } from '@wordpress/data';
+
 export default function Edit(props) {
 
 	const { setAttributes, isSelected } = props
-	const { imageUrl, imageAlt, imageId, header, info } = props.attributes;
+	const { imageUrl, imageAlt, imageId, header, info, link, btnText } = props.attributes;
 
 	const onSelectImage = (media) => {
 		setAttributes({
@@ -42,6 +45,21 @@ export default function Edit(props) {
 			imageAlt: media.alt,
 		});
 	};
+
+	// Get all published pages
+    const pages = useSelect((select) => {
+        return select('core').getEntityRecords('postType', 'page', { per_page: -1 });
+    }, []);
+
+    const options = [
+        { label: __('Select a page', 'your-text-domain'), value: '' },
+        ...(pages
+            ? pages.map((page) => ({
+                  label: page.title.rendered,
+                  value: page.link, // permalink
+              }))
+            : [])
+    ];
 
 	return (
 		<div { ...useBlockProps() }>
@@ -60,9 +78,17 @@ export default function Edit(props) {
 							)}
 						/>
 					</MediaUploadCheck>
-
-					
 				</PanelBody>
+
+				<PanelBody title={__('Button Link', 'your-text-domain')} initialOpen={true}>
+                    <SelectControl
+                        label={__('Choose a page', 'your-text-domain')}
+                        value={link}
+                        options={options}
+                        onChange={(newLink) => setAttributes({ link: newLink })}
+                        disabled={!pages}
+                    />
+                </PanelBody>
 			</InspectorControls>
 
 			<div id="section-about" class="section">
@@ -75,15 +101,22 @@ export default function Edit(props) {
 								onChange={(value) => setAttributes({ header: value })}
 								placeholder="Enter text..."
 							/>
-							<p>
+							<main>
 								<RichText
-									tagName="span"
+									tagName="p"
 									value={info}
 									onChange={(value) => setAttributes({ info: value })}
 									placeholder="Enter text..."
 								/>
-								<a href="#!">Read more</a>
-							</p>
+								<a>
+									<RichText
+										tagName="span"
+										value={btnText}
+										onChange={(value) => setAttributes({ btnText: value })}
+										placeholder="Enter Button text..."
+									/>
+								</a>							
+							</main>
 						</section>
 						<section>
 							<figure>

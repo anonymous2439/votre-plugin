@@ -42,7 +42,11 @@ registerBlockType( metadata.name, {
 			"items": {
 				"type": "object"
 			}
-		}
+		},
+		title: {
+			type: 'string',
+			default: 'Services'
+		},
 	},
 	/**
 	 * @see ./edit.js

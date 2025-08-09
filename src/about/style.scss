@@ -20,8 +20,8 @@
         #section-about .container section {border: 1px solid #889633;width: 100%;border-radius: 35px;position: relative;overflow: hidden;background: var(--color-tertiary); min-height: 716px;}
         #section-about .container section:nth-of-type(2) {background: #fff;}
         #section-about .container section h2 {background-color: var(--color-primary);font-size: 50px;padding: 50px 85px;color: var(--color-secondary);}
-        #section-about .container section p {padding: 38px 85px;color: #1F1F1F;font-size: 25px;background-color: var(--color-tertiary);}
-        #section-about .container section p a {display: block;margin-top: 46px;color: #1F1F1F;font-size: 25px;background-color: var(--color-tertiary);}
+        #section-about .container section main {padding: 38px 85px;color: #1F1F1F;font-size: 25px;background-color: var(--color-tertiary);}
+        #section-about .container section main a {display: block;margin-top: 46px;color: #1F1F1F;font-size: 25px;background-color: var(--color-tertiary);}
         #section-about .container section figure {}
         #section-about .container section img {display: block;}
         @media (max-width: 1200px) {

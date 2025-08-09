@@ -51,7 +51,8 @@ function Edit(props) {
     setAttributes
   } = props;
   const {
-    services = []
+    services = [],
+    title
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
   const updateService = (index, fields) => {
@@ -185,8 +186,13 @@ function Edit(props) {
           className: "container",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "info",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
-              children: "Services"
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              tagName: "h2",
+              value: title,
+              onChange: newVal => setAttributes({
+                title: newVal
+              }),
+              placeholder: "Title here\u2026"
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "boxes",
@@ -288,6 +294,10 @@ __webpack_require__.r(__webpack_exports__);
       "items": {
         "type": "object"
       }
+    },
+    title: {
+      type: 'string',
+      default: 'Services'
     }
   },
   /**
@@ -339,7 +349,7 @@ function save(props) {
     setAttributes
   } = props;
   const {
-    images,
+    title,
     services = []
   } = props.attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
@@ -353,8 +363,9 @@ function save(props) {
           class: "container",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             class: "info",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-              children: "Services"
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+              tagName: "h2",
+              value: title
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "boxes",
