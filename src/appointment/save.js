@@ -54,11 +54,8 @@ export default function save(props) {
 							<input
 								id="datetime"
 								class="datetime"
-								type="text"
-								placeholder="Date and Time"
+								type="datetime-local"
 								required
-								onfocus="this.type='datetime-local'"
-								onblur="if (!this.value) this.type='text'"
 								name="datetime"
 							/>
 

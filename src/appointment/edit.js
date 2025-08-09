@@ -105,16 +105,15 @@ export default function Edit(props) {
 							<input placeholder="Email" />
 
 							{/* <input class="datetime" type='datetime-local' name='datetime' required /> */}
-							<input
-								id="datetime"
-								class="datetime"
-								type="text"
-								placeholder="Date and Time"
-								required
-								onfocus="this.type='datetime-local'"
-								onblur="if (!this.value) this.type='text'"
-								name="datetime"
-							/>
+							<div className='datetime_con'>
+								<input
+									id="datetime"
+									className="datetime"
+									type="datetime-local"
+									required
+									name="datetime"
+								/>
+							</div>
 
 							<textarea placeholder="Write a short note"></textarea>
 
