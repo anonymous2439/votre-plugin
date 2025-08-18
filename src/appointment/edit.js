@@ -34,6 +34,22 @@ export default function Edit(props) {
 	const { setAttributes, isSelected } = props
 	const { btnText, imageUrl, imageId, imageAlt, intro, intro2 } = props.attributes;
 
+	function getLocalDateTimeString(daysToAdd = 0, date = new Date()) {
+		date.setDate(date.getDate() + daysToAdd);
+		const pad = (n) => String(n).padStart(2, "0");
+		return (
+			date.getFullYear() +
+			"-" +
+			pad(date.getMonth() + 1) +
+			"-" +
+			pad(date.getDate()) +
+			"T" +
+			pad(date.getHours()) +
+			":" +
+			pad(date.getMinutes())
+		);
+	}
+
 	const onSelectImage = (media) => {
 		setAttributes({
 			imageUrl: media.url,
@@ -104,7 +120,6 @@ export default function Edit(props) {
 							<input placeholder="Phone Number" />
 							<input placeholder="Email" />
 
-							{/* <input class="datetime" type='datetime-local' name='datetime' required /> */}
 							<div className='datetime_con'>
 								<input
 									id="datetime"
@@ -112,6 +127,7 @@ export default function Edit(props) {
 									type="datetime-local"
 									required
 									name="datetime"
+									value={getLocalDateTimeString(1)}
 								/>
 							</div>
 

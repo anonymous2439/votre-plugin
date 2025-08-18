@@ -18,6 +18,22 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 export default function save(props) {
 	const { btnText, imageUrl, imageId, imageAlt, intro, intro2 } = props.attributes;
 
+	function getLocalDateTimeString(daysToAdd = 0, date = new Date()) {
+		date.setDate(date.getDate() + daysToAdd);
+		const pad = (n) => String(n).padStart(2, "0");
+		return (
+			date.getFullYear() +
+			"-" +
+			pad(date.getMonth() + 1) +
+			"-" +
+			pad(date.getDate()) +
+			"T" +
+			pad(date.getHours()) +
+			":" +
+			pad(date.getMinutes())
+		);
+	}
+
 	return (
 		<p { ...useBlockProps.save() }>
 			
@@ -50,13 +66,13 @@ export default function save(props) {
 							<input placeholder="Phone Number" name='phone_number' required />
 							<input placeholder="Email" type='email' name='email' required />
 
-							{/* <input class="datetime" type='datetime-local' name='datetime' required /> */}
 							<input
 								id="datetime"
 								class="datetime"
 								type="datetime-local"
 								required
 								name="datetime"
+								value={getLocalDateTimeString(1)}
 							/>
 
 							<textarea placeholder="Write a short note" name='message'></textarea>
