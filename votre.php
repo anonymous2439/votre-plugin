@@ -58,6 +58,90 @@ function create_block_votre_block_init() {
 }
 add_action( 'init', 'create_block_votre_block_init' );
 
+function send_mail_via_graph($to, $subject, $html_content) {
+    $tenantId = GRAPH_TENANT_ID;
+    $clientId = GRAPH_CLIENT_ID;
+    $clientSecret = GRAPH_CLIENT_SECRET;
+    $sender = GRAPH_SENDER;
+
+    error_log('send_mail_via_graph() was called');
+
+    // Step 1: Get access token
+    $token_url = "https://login.microsoftonline.com/{$tenantId}/oauth2/v2.0/token";
+    error_log('Fetching token from: ' . $token_url);
+
+    $response = wp_remote_post($token_url, [
+        'body' => [
+            'client_id' => $clientId,
+            'scope' => 'https://graph.microsoft.com/.default',
+            'client_secret' => $clientSecret,
+            'grant_type' => 'client_credentials',
+        ],
+        'timeout' => 20,
+    ]);
+
+    if (is_wp_error($response)) {
+        error_log('Graph token request failed: ' . $response->get_error_message());
+        return false;
+    }
+
+    $status_code = wp_remote_retrieve_response_code($response);
+    $body = wp_remote_retrieve_body($response);
+    // error_log("Token request HTTP code: {$status_code}");
+    // error_log("Token response body: {$body}");
+
+    $body_data = json_decode($body, true);
+    $access_token = $body_data['access_token'] ?? null;
+
+    if (!$access_token) {
+        error_log('Graph token missing — cannot continue');
+        return false;
+    }
+
+    // Step 2: Send mail
+    $email = [
+        'message' => [
+            'subject' => $subject,
+            'body' => [
+                'contentType' => 'HTML',
+                'content' => $html_content,
+            ],
+            'toRecipients' => [
+                ['emailAddress' => ['address' => $to]],
+            ],
+            'from' => [
+                'emailAddress' => ['address' => $sender],
+            ],
+        ],
+        'saveToSentItems' => true,
+    ];
+
+    $send_url = "https://graph.microsoft.com/v1.0/users/{$sender}/sendMail";
+    // error_log('Sending email via: ' . $send_url);
+
+    $res = wp_remote_post($send_url, [
+        'headers' => [
+            'Authorization' => "Bearer {$access_token}",
+            'Content-Type'  => 'application/json',
+        ],
+        'body' => wp_json_encode($email),
+        'timeout' => 20,
+    ]);
+
+    if (is_wp_error($res)) {
+        error_log('Graph sendMail failed: ' . $res->get_error_message());
+        return false;
+    }
+
+    $res_code = wp_remote_retrieve_response_code($res);
+    $res_body = wp_remote_retrieve_body($res);
+    // error_log("Graph sendMail HTTP code: {$res_code}");
+    // error_log("Graph sendMail response: {$res_body}");
+
+    return $res_code === 202;
+}
+
+
 add_action('wp_enqueue_scripts', 'enqueue_sweetalert');
 function enqueue_sweetalert() {
 	wp_enqueue_script(
@@ -80,10 +164,14 @@ function appointment_form_submit() {
 
 		$to = 'info@votrestc.com';
 		$subject = 'Book an Appointment';
-		$body = "Name: $name\nPhone Number: $phone_number\nEmail: $email\nDate and Time: $datetime\n\n$message";
+		$body = "<p><strong>Name:</strong> {$name}<br>
+				 <strong>Phone Number:</strong> {$phone_number}<br>
+				 <strong>Email:</strong> {$email}<br>
+				 <strong>Booking Date:</strong> {$datetime}</p>
+				 <p>{$message}</p>";
 		$headers = ['From: ' . $name . ' <' . $email . '>'];
 
-		wp_mail($to, $subject, $body, $headers);
+		send_mail_via_graph($to, $subject, $body);
 
 		// Set a query param or cookie to trigger JS later
 		wp_redirect(add_query_arg('appointment_success', '1', wp_get_referer()));

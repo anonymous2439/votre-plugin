@@ -116,9 +116,9 @@ export default function Edit(props) {
 									/>
 								</div>
 								<ul class="social">
-									<li><a href={instagramUrl}><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Instagram.png" alt="Instagram logo" /></figure></a></li>
+									<li><a href={instagramUrl}><figure><img src="https://votrestc.com/wp-content/uploads/2025/10/Instagram.png" alt="Instagram logo" /></figure></a></li>
 									{/* <li><a href={twitterUrl}><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Twitter.png" alt="Facebook logo" /></figure></a></li> */}
-									<li><a href={facebookUrl}><figure><img src="http://45.77.242.28/votre/wp-content/uploads/2025/07/Facebook.png" alt="Twitter logo" /></figure></a></li>
+									<li><a href={facebookUrl}><figure><img src="https://votrestc.com/wp-content/uploads/2025/10/Facebook.png" alt="Twitter logo" /></figure></a></li>
 								</ul>
 							</div>
 							<div className="map">

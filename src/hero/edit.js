@@ -131,7 +131,7 @@ export default function Edit(props) {
 
 						<header style={{position:'relative',zIndex:1}}>
 							<div class="main-logo">
-								<a href="/votre">
+								<a href="/">
 									<figure>
 										{logoUrl && (
 											<img src={logoUrl} alt={logoAlt || ''} />
